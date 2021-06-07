@@ -4,20 +4,19 @@ import { useTable } from "react-table";
 import { CardContainer } from "./styles";
 import { Styles } from "../tableStyles";
 import TableCard from "./tableCard";
-
-export default function Tableapi() {
-  const [planets, setPlanets] = useState([]);
+export default function TableapiPeople() {
+  const [people, setPeople] = useState([]);
 
   const getData = async () => {
-    const response = await axios.get("https://swapi.dev/api/planets/");
-    setPlanets(response.data.results);
+    const response = await axios.get("https://swapi.dev/api/people/");
+    setPeople(response.data.results);
   };
 
   useEffect(() => {
     getData();
   }, []);
 
-  const data = useMemo(() => planets, [planets]);
+  const data = useMemo(() => people, [people]);
 
   const columns = useMemo(
     () => [
@@ -26,24 +25,24 @@ export default function Tableapi() {
         accessor: "name",
       },
       {
-        Header: "Climate",
-        accessor: "climate",
+        Header: "Gender",
+        accessor: "gender",
       },
       {
-        Header: "Diameter",
-        accessor: "diameter",
+        Header: "Height",
+        accessor: "height",
       },
       {
-        Header: "Population",
-        accessor: "population",
+        Header: "Mass",
+        accessor: "mass",
       },
       {
-        Header: "Terrain",
-        accessor: "terrain",
+        Header: "Skin Color",
+        accessor: "skin_color",
       },
       {
-        Header: "Gravity",
-        accessor: "gravity",
+        Header: "Birth Year",
+        accessor: "birth_year",
       },
     ],
     []
@@ -54,7 +53,7 @@ export default function Tableapi() {
 
   return (
     <Styles>
-      <h1 style={{ textAlign: "center" }}>Planets</h1>
+      <h1 style={{ textAlign: "center" }}>People</h1>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -80,12 +79,11 @@ export default function Tableapi() {
           })}
         </tbody>
       </table>
-
       <CardContainer>
         <TableCard
-         
+        
         />
-      
+       
       </CardContainer>
     </Styles>
   );

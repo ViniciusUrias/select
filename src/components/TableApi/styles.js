@@ -3,36 +3,45 @@ import styled from 'styled-components';
 
 export const CardContainer = styled.div`
     width: 100%;
-    justify-content: space-evenly;
-    height: auto;
-    border: 1px solid red;
+    justify-content: space-between;
+    height: 200px;
     display: flex;
-    margin-top: 2rem;
+    margin-top: 5rem;
+    
     
 `;
 export const Card = styled.div`
-    display: block;
     justify-content: space-between;
-    
     text-align: center;
-    width: 400px;
-    height: auto;
-    background-color: whitesmoke;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .05), 0 0px 40px rgba(0, 0, 0, .08);
+    width: 500px;
+    height: 250px;
     color: white;
+    
+   
 `;
 
 export const CardImg = styled.img`
-padding: 0.4rem;
+padding: 0.2rem;
 object-fit: cover;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0px 4px rgba(0, 0, 0, 1);
-
-width: 70%;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0px 25px rgba(0, 0, 0, 1);
+margin: 0.2rem;
+width: 90%;
+height: 90%;
+border-radius: 10px;
+:hover{
+      transition-duration: 900ms;
+      background-color: purple;
+      cursor: pointer;
+      opacity: 0.8;
+    }
 `;
 
 export const CardText = styled.p`
     color: black;
     font-size: 2rem;
     margin: auto;
+   
     
 `;
+
+

@@ -1,9 +1,12 @@
+import Form from "../components/Form";
 import Layout from "../components/Layout";
 
-export default function Form(){
+export default function FormPage(){
     return(
         <Layout>
-            <div>oi</div>
+           <Form>
+               
+           </Form>
         </Layout>
     )
 }

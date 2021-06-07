@@ -11,6 +11,7 @@ table {
 text-align: center;
 width: 100%;
 color: gray;
+font-size: 1.3rem;
 
   tr {
     :last-child {
@@ -38,10 +39,9 @@ color: gray;
     padding: 0.5rem;
     border-bottom: 1px solid black;
     border-right: 1px solid black;
-    
+  }  
 
     
-  }
-
+  
   
 `;

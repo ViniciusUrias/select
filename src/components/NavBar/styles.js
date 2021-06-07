@@ -1,28 +1,30 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    width: 100%;
+    width: 75%;
     height: 3rem;
-    background-color: #9DC0BC;
+    margin: 0 auto;
+    background-color: purple;
     display: flex;
  
     
 `;
 
 export const Content = styled.div`
-    width: 75%;
+    width: 100%;
     margin: auto;
-    justify-content:space-evenly;
+    justify-content:space-around;
     display: flex;
 
 `;
 
 export const Divider = styled.div`
     line-height: 1rem;
-    border-right: 1px solid black;
+    border-right: 2px solid black;
     width: 15%;
     :last-child{
         border: none;
+       
     }
     
 `;

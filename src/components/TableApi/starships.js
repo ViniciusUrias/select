@@ -4,20 +4,19 @@ import { useTable } from "react-table";
 import { CardContainer } from "./styles";
 import { Styles } from "../tableStyles";
 import TableCard from "./tableCard";
-
-export default function Tableapi() {
-  const [planets, setPlanets] = useState([]);
+export default function Tableapistarships() {
+  const [starShips, setStarShips] = useState([]);
 
   const getData = async () => {
-    const response = await axios.get("https://swapi.dev/api/planets/");
-    setPlanets(response.data.results);
+    const response = await axios.get("https://swapi.dev/api/starships/");
+    setStarShips(response.data.results);
   };
 
   useEffect(() => {
     getData();
   }, []);
 
-  const data = useMemo(() => planets, [planets]);
+  const data = useMemo(() => starShips, [starShips]);
 
   const columns = useMemo(
     () => [
@@ -26,24 +25,28 @@ export default function Tableapi() {
         accessor: "name",
       },
       {
-        Header: "Climate",
-        accessor: "climate",
+        Header: "Model",
+        accessor: "model",
       },
       {
-        Header: "Diameter",
-        accessor: "diameter",
+        Header: "Manufacturer",
+        accessor: "manufacturer",
       },
       {
-        Header: "Population",
-        accessor: "population",
+        Header: "Cost",
+        accessor: "cost_in_credits",
       },
       {
-        Header: "Terrain",
-        accessor: "terrain",
+        Header: "Max Speed",
+        accessor: "max_atmosphering_speed",
       },
       {
-        Header: "Gravity",
-        accessor: "gravity",
+        Header: "Passengers",
+        accessor: "passengers",
+      },
+      {
+        Header: "Lenght",
+        accessor: "length",
       },
     ],
     []
@@ -54,7 +57,7 @@ export default function Tableapi() {
 
   return (
     <Styles>
-      <h1 style={{ textAlign: "center" }}>Planets</h1>
+      <h1 style={{ textAlign: "center" }}>StarShips</h1>
       <table {...getTableProps()}>
         <thead>
           {headerGroups.map((headerGroup) => (
@@ -83,9 +86,9 @@ export default function Tableapi() {
 
       <CardContainer>
         <TableCard
-         
+        
         />
-      
+
       </CardContainer>
     </Styles>
   );

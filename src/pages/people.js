@@ -1,6 +1,6 @@
 import Layout from "../components/Layout";
-import TableapiPeople from '../components/TableApi_People'
-export default function Apitable(){
+import TableapiPeople from '../components/TableApi/people'
+export default function People(){
     return(
         <Layout>
             <TableapiPeople></TableapiPeople>
